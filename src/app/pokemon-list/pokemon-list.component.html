@@ -1,0 +1,35 @@
+<div class="all-pokemons-container">
+    <div *ngFor="let pokemon of dataService.loadedPokemons" class="pokemon-main-container">
+        <div (click)="showFullImg()" class="pokemon-child-container" [style.background-color]="dataService.getBgColors(pokemon)">
+            <span class="pokemon-id">#{{ pokemon.id }}</span>
+            <div class="pokemon-img-container">
+                <img src="{{pokemon.sprites.other.dream_world.front_default}}" alt="Pokemon Image" title="ability: {{ pokemon.abilities[0].ability.name }}">
+            </div>
+            <p> {{ pokemon.types[0].type.name }} </p>
+            <span class="pokemon-name">{{ pokemon.name }}</span>
+        </div>
+    </div>
+</div>
+
+<div class="btn-container">
+    <button (click)="loadMore()">Load more...( {{ countEnd }} )</button>
+</div>
+
+<app-fullscreen *ngIf="showfull"></app-fullscreen>
+
+
+
+
+
+
+
+
+
+<!-- 
+<div *ngFor="let pokemon of dataService.loadedPokemons" class="pokemon-main-container">
+    <div class="pokemon-child-container"> -->
+<!-- <img src="{{pokemon.sprites.other.dream_world.front_default}}" alt="Pokemon Image" class="pokemon-img"> -->
+<!-- <span class="pokemon-id">{{ pokemon.id }}</span> -->
+<!-- <span>{{ pokemon.name }}</span> -->
+<!-- </div> -->
+<!-- </div> -->

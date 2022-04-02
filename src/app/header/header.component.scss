@@ -1,0 +1,16 @@
+.header-container {
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+    input {
+        border: none;
+        padding: 4px;
+        outline: none;
+    }
+    button {
+        border: none;
+        background-color: gold;
+        color: white;
+        cursor: pointer;
+    }
+}
