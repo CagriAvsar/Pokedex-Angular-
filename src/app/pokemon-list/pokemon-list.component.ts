@@ -9,8 +9,7 @@ import { DataService } from '../services/data.service';
 export class PokemonListComponent implements OnInit {
 
 countStart:number = 1;
-countEnd:number = 15;
-showfull:boolean = false;
+countEnd:number = 17;
 
   constructor(public dataService: DataService) { 
 
@@ -27,19 +26,16 @@ showfull:boolean = false;
     .then(async (response: any) => {
       let pokemon = await response.json();
       this.dataService.loadedPokemons.push(pokemon);
-      console.log('Pokemon is:', this.dataService.loadedPokemons);
+      // console.log('Pokemon is:', this.dataService.loadedPokemons);
     })
     }
   }
 
   loadMore() {
-    this.countStart += 15;
-    this.countEnd += 15;
+    this.countStart += 17;
+    this.countEnd += 17;
     this.dataPokemons();
   }
 
-  showFullImg() {
-    this.showfull = true;
-  }
 
 }

@@ -1,6 +1,6 @@
-<div class="all-pokemons-container">
+<div *ngIf="!dataService.activeFilter1" class="all-pokemons-container">
     <div *ngFor="let pokemon of dataService.loadedPokemons" class="pokemon-main-container">
-        <div (click)="showFullImg()" class="pokemon-child-container" [style.background-color]="dataService.getBgColors(pokemon)">
+        <div (click)="dataService.showDetails(pokemon)" class="pokemon-child-container" [style.background-color]="dataService.getBgColors(pokemon)">
             <span class="pokemon-id">#{{ pokemon.id }}</span>
             <div class="pokemon-img-container">
                 <img src="{{pokemon.sprites.other.dream_world.front_default}}" alt="Pokemon Image" title="ability: {{ pokemon.abilities[0].ability.name }}">
@@ -15,21 +15,21 @@
     <button (click)="loadMore()">Load more...( {{ countEnd }} )</button>
 </div>
 
-<app-fullscreen *ngIf="showfull"></app-fullscreen>
+<app-fullscreen *ngIf="dataService.showfull"></app-fullscreen>
 
+<div *ngIf="!dataService.activeFilter && !dataService.showfull">
+    <div class="all-pokemons-container">
+        <div class="pokemon-main-container"  *ngFor="let pokemon of dataService.pokemonFilter">
+            <div (click)="dataService.showDetails(pokemon)" class="pokemon-child-container" [style.background-color]="dataService.getBgColors(pokemon)">
+                <span class="pokemon-id">#{{ pokemon.id }}</span>
+                <div class="pokemon-img-container">
+                    <img src="{{pokemon.sprites.other.dream_world.front_default}}" alt="Pokemon Image" title="ability: {{ pokemon.abilities[0].ability.name }}">
+                </div>
+                <p> {{ pokemon.types[0].type.name }} </p>
+                <span class="pokemon-name">{{ pokemon.name }}</span>
+            </div>
+        </div>
+    </div>
+    
+</div>
 
-
-
-
-
-
-
-
-<!-- 
-<div *ngFor="let pokemon of dataService.loadedPokemons" class="pokemon-main-container">
-    <div class="pokemon-child-container"> -->
-<!-- <img src="{{pokemon.sprites.other.dream_world.front_default}}" alt="Pokemon Image" class="pokemon-img"> -->
-<!-- <span class="pokemon-id">{{ pokemon.id }}</span> -->
-<!-- <span>{{ pokemon.name }}</span> -->
-<!-- </div> -->
-<!-- </div> -->
