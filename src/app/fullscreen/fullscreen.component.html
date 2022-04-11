@@ -19,23 +19,24 @@
     <aside>
         <div class="pokemon-stats-container">
 
-          
-            <div *ngIf="about">
-                <h3> <b>NAME:</b> {{ dataService.pokemon.name }}</h3>
-                <div *ngFor="let abl of dataService.pokemon.abilities; let i = index" class="stat-content1">
-                   <p><b> Ability {{ i+1 }}:</b></p> <div class="stat-content-name">{{ abl.ability.name }}</div>
+
+            <div *ngIf="about" class="about-main-container">
+                <h3> <b>NAME:</b>{{ dataService.pokemon.name }}</h3>
+                <div *ngFor="let abl of dataService.pokemon.abilities; let i = index" class="abilities-container">
+                    <span><b> Ability {{ i+1 }}:</b></span>
+                    <span>{{ abl.ability.name }}</span>
                 </div>
-                <div class="stat-content column">
-                    <p><b> Height:</b></p> <div class="stat-content-name">{{ dataService.pokemon.height }}</div>
-                    <p><b> Weight:</b></p>  <div class="stat-content-name">{{ dataService.pokemon.weight }}</div>
+                <div class="body-description">
+                    <span><b> Height:</b>{{ dataService.pokemon.height }}</span>
+                    <span><b> Weight:</b>{{ dataService.pokemon.weight }}</span>
                 </div>
+
             </div>
 
 
-            <div *ngIf="baseStat">
-                <div *ngFor="let pokestat of dataService.pokemon.stats; let i = index" class="stat-content">
-                    <b>{{ dataService.pokemon.stats[i].stat.name }}:</b> {{ dataService.pokemon.stats[i].base_stat
-                    }}
+            <div *ngIf="baseStat" class="base-container">
+                <div *ngFor="let pokestat of dataService.pokemon.stats; let i = index" class="stat-content mrg-btm90">
+                    <b>{{ dataService.pokemon.stats[i].stat.name }}:</b> {{ dataService.pokemon.stats[i].base_stat }}
                 </div>
             </div>
 
@@ -48,7 +49,7 @@
             </div> -->
 
             <div *ngIf="moves">
-                <div *ngFor="let pokeMoves of dataService.pokemon.moves; let i = index" class="stat-content">
+                <div *ngFor="let pokeMoves of dataService.pokemon.moves; let i = index" class="stat-content mrg-btm25">
                     <p *ngIf="i <= 6"><b> {{ i+1 }}. Move :</b> {{pokeMoves.move.name }}</p>
                 </div>
             </div>
