@@ -3,7 +3,7 @@
         <div (click)="dataService.showDetails(pokemon)" class="pokemon-child-container" [style.background-color]="dataService.getBgColors(pokemon)">
             <span class="pokemon-id">#{{ pokemon.id }}</span>
             <div class="pokemon-img-container">
-                <img src="{{pokemon.sprites.other.dream_world.front_default}}" alt="Pokemon Image" title="ability: {{ pokemon.abilities[0].ability.name }}">
+                <img src="{{pokemon.sprites.other.dream_world.front_default}}" alt="Pokemon Image" title="Ability: {{ pokemon.abilities[0].ability.name  }}">
             </div>
             <p> {{ pokemon.types[0].type.name }} </p>
             <span class="pokemon-name">{{ pokemon.name }}</span>
@@ -19,7 +19,7 @@
 
 <div *ngIf="!dataService.activeFilter && !dataService.showfull">
     <div class="all-pokemons-container">
-        <div class="pokemon-main-container"  *ngFor="let pokemon of dataService.pokemonFilter">
+        <div class="pokemon-main-container" *ngFor="let pokemon of dataService.pokemonFilter">
             <div (click)="dataService.showDetails(pokemon)" class="pokemon-child-container" [style.background-color]="dataService.getBgColors(pokemon)">
                 <span class="pokemon-id">#{{ pokemon.id }}</span>
                 <div class="pokemon-img-container">
@@ -30,6 +30,5 @@
             </div>
         </div>
     </div>
-    
-</div>
 
+</div>

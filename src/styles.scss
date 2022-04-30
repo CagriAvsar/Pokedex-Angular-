@@ -3,6 +3,10 @@ body {
     background-color: #89CFF0;
 }
 
+.hide {
+    display: none;
+}
+
 .column {
     display: flex;
     flex-direction: column;
