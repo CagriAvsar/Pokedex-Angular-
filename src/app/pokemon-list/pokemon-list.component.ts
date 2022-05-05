@@ -10,7 +10,7 @@ export class PokemonListComponent implements OnInit {
 
 countStart:number = 1;
 countEnd:number = 17;
-// pokemonID = ''; !!!!!
+ 
 
   constructor(public dataService: DataService) { 
 

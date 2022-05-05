@@ -3,7 +3,8 @@
         <div (click)="dataService.showDetails(pokemon)" class="pokemon-child-container" [style.background-color]="dataService.getBgColors(pokemon)">
             <span class="pokemon-id">#{{ pokemon.id }}</span>
             <div class="pokemon-img-container">
-                <img src="{{pokemon.sprites.other.dream_world.front_default}}" alt="Pokemon Image" title="Ability: {{ pokemon.abilities[0].ability.name  }}">
+                <img *ngIf="dataService.classicMode" src="{{pokemon.sprites.other.dream_world.front_default}}" alt="Pokemon Image" title="Ability: {{ pokemon.abilities[0].ability.name  }}">
+                <img *ngIf="!dataService.classicMode" src="https://projectpokemon.org/images/normal-sprite/{{pokemon.name}}.gif" alt="">
             </div>
             <p> {{ pokemon.types[0].type.name }} </p>
             <span class="pokemon-name">{{ pokemon.name }}</span>
@@ -23,7 +24,8 @@
             <div (click)="dataService.showDetails(pokemon)" class="pokemon-child-container" [style.background-color]="dataService.getBgColors(pokemon)">
                 <span class="pokemon-id">#{{ pokemon.id }}</span>
                 <div class="pokemon-img-container">
-                    <img src="{{pokemon.sprites.other.dream_world.front_default}}" alt="Pokemon Image" title="ability: {{ pokemon.abilities[0].ability.name }}">
+                    <img *ngIf="dataService.classicMode" src="{{pokemon.sprites.other.dream_world.front_default}}" alt="Pokemon Image" title="ability: {{ pokemon.abilities[0].ability.name }}">
+                    <img *ngIf="!dataService.classicMode" src="https://projectpokemon.org/images/normal-sprite/{{pokemon.name}}.gif" alt="Full Pokemon Image">
                 </div>
                 <p> {{ pokemon.types[0].type.name }} </p>
                 <span class="pokemon-name">{{ pokemon.name }}</span>

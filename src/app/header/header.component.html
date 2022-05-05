@@ -1,7 +1,7 @@
 <div class="header-container">
 
     <div class="checkbox-container">
-        <input type="checkbox">Animation
+        <input type="checkbox" (click)="dataService.animation()">Animation
     </div>
     <input type="text" placeholder="catch´em all" #search (keyup)="searchPokemon(search.value)">
 

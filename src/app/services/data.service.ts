@@ -11,6 +11,7 @@ export class DataService {
   pokemon:any = '';
   activeFilter:boolean = false;
   activeFilter1:boolean = false;
+  classicMode:boolean = true;
   pokemonFilter:any = [];
 
 
@@ -77,6 +78,10 @@ export class DataService {
     }
     return this.bgColors;
     console.log(this.bgColors)
+  }
+
+  animation() {
+    this.classicMode = !this.classicMode;
   }
 
 }
