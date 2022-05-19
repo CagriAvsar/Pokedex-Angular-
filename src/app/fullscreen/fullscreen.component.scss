@@ -31,6 +31,12 @@
     .close-detail {
         z-index: 2;
         transition: all 255ms ease-in-out;
+        border: solid 3px;
+        border-radius: 4px;
+        padding: 5px;
+        letter-spacing: 4px;
+        background-color: #8080803b;
+        text-transform: uppercase;
         cursor: pointer;
         &:hover {
             color: gold;
